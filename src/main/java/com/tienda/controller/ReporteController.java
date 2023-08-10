@@ -26,16 +26,32 @@ public class ReporteController {
     @GetMapping("/usuarios")
     public ResponseEntity<Resource> usuarios(@RequestParam String tipo) throws IOException {
         return reporteService.generateReporte(
-                "usuarios", 
-                null, 
+                "usuarios",
+                null,
                 tipo);
     }
-    
+
     @GetMapping("/ventas")
     public ResponseEntity<Resource> ventas(@RequestParam String tipo) throws IOException {
         return reporteService.generateReporte(
-                "ventas", 
-                null, 
+                "ventas",
+                null,
+                tipo);
+    }
+
+    @GetMapping("/categorias")
+    public ResponseEntity<Resource> categorias(@RequestParam String tipo) throws IOException {
+        return reporteService.generateReporte(
+                "categorias",
+                null,
+                tipo);
+    }
+
+    @GetMapping("/productos")
+    public ResponseEntity<Resource> productos(@RequestParam String tipo) throws IOException {
+        return reporteService.generateReporte(
+                "productos",
+                null,
                 tipo);
     }
 }
